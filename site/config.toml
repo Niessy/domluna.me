@@ -1,3 +1,13 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Dom Luna"
+author = "Dominique Luna"
+canonifyurls = true
+enableEmoji = true
+
+[params]
+  author = "Dominique Luna"
+  description = "Some description here"
+
+
+

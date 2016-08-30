@@ -1,0 +1,15 @@
+{{ partial "head" . }}
+{{ partial "nav" . }}
+
+<main class="black-70 pa3 pa5-ns">
+  <header class="bb pb4 tc">
+    <h1 class="f-headline fw6">{{ .Title }}</h1>
+  </header>
+  <ul class="list mv5">
+    {{ range .Data.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </ul>
+</main>
+
+{{ partial "footer" . }}

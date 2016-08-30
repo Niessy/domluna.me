@@ -1,1 +1,46 @@
-@import "imports/reset.css";
+/*@import "imports/fira_code.css";*/
+@import "../../node_modules/tachyons/css/tachyons.css";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+article img, video {
+  height: auto;
+  margin: auto;
+  display: block;
+  padding: 1rem 0;
+  max-width: 100%;
+}
+
+article a {
+  color: inherit;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+article a:hover {
+  transition: gray 0.3 ease;
+}
+
+code, pre, kbd, samp {
+  font-family: 'Roboto Mono', monospace;
+}
+
+pre {
+  overflow-x: scroll;
+  font-size: 70%;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid rgba(0, 0, 0, .0625);
+  background-color: #fafafa;
+}
+
+/*code.has-jax {
+  font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;
+  color: #515151;
+}*/
