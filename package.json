@@ -34,14 +34,13 @@
     "gulp-util": "^3.0.7",
     "imports-loader": "^0.6.5",
     "postcss-cssnext": "^2.7.0",
+    "postcss-extend": "^1.0.5",
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.9.1",
+    "tachyons": "^4.1.2",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "whatwg-fetch": "^1.0.0"
   },
-  "devDependencies": {
-    "poststylus": "^0.2.3",
-    "tachyons": "^4.1.2"
-  }
+  "devDependencies": {}
 }

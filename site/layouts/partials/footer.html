@@ -1,10 +1,53 @@
 <footer class="pv4 ph3 ph5-m ph6-l mid-gray bt b--light-gray">
-  <small class="f6 db tc ttu">{{ "Made with :heart: and :coffee: " | emojify }} by <b>Dominique Luna</b></small>
-  <small class="f6 db tc mt3">dluna132[at]gmail.com</small>
+  <small class="f6 db tc ttu">Made with love and coffee by <strong>Dominique Luna</strong></small>
+  <small class="f6 db tc mt3" id="contact">dluna132[at]gmail.com</small>
 </footer>
+
+    <!-- Mathjax -->
+{{ if eq .Params.math true }}
+<script>
+  console.log("Loading math...");
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'small'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+    extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i = 0; i < all.length; i += 1) {
+    if (all[i].SourceElement().parentNode.id === 'contact') {
+      console.log('Not', all[i].SourceElement().parentNode);
+      continue;
+    }
+    console.log(all[i].SourceElement().parentNode);
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+{{end}}
+
 
 <!-- Scripts -->
 <script src="/app.js"></script>
 
 </body>
+
 </html>

@@ -8,13 +8,14 @@ import cssnext from "postcss-cssnext";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
+import simpleExtend from "postcss-extend";
 
 const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
 
 gulp.task("hugo", (cb) => {
   const args = ["-d", "../dist", "-s", "site", "-v"];
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+  return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
     if (code === 0) {
       browserSync.reload();
     } else {
@@ -27,8 +28,8 @@ gulp.task("hugo", (cb) => {
 gulp.task("build", ["css", "js", "hugo"]);
 
 gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
-    .pipe(postcss([cssnext(), cssImport({from: "./src/css/main.css"})]))
+  gulp.src("./src/css/main.css")
+    .pipe(postcss([cssImport, simpleExtend, cssnext]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));

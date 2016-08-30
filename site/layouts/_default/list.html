@@ -1,11 +1,9 @@
 {{ partial "head" . }}
 {{ partial "nav" . }}
 
-<main class="black-70 pa3 pa5-ns">
-  <header class="bb pb4 tc">
-    <h1 class="f-headline fw6">{{ .Title }}</h1>
-  </header>
-  <ul class="list mv5">
+<main>
+  <section class="pv4 ph3 pa5-m ph6-l black-70">
+    <p class="fw6 f-headline-l f-subheadline-m f1 measure">{{ .Title }}</p>
     {{ range .Data.Pages }}
       {{ .Render "summary" }}
     {{ end }}

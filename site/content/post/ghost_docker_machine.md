@@ -1,5 +1,5 @@
 +++
-title = "Setting up Ghost with Docker-machine"
+title = "Setting up Ghost with Docker Machine"
 date = "2015-03-05"
 share = true
 tags = ["Docker", "docker-machine", "Ghost"]

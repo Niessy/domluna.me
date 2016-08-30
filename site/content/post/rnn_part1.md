@@ -1,6 +1,6 @@
 +++
 date = "2015-10-08"
-title = "RNNs Part 1: Creating a cell"
+title = "RNNs Part 1: Creating a Cell"
 tags = ["RNN", "Deep Learning", "NLP"]
 math = true
 +++

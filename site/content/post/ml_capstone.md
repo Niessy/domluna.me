@@ -4,6 +4,8 @@ title = "The Case of the Doomed Agent"
 math = true
 +++
 
+> This project was done as the Capstone for the Udacity Machine Learning Nanodegree
+
 ### Definition
 
 #### Project Overview

@@ -1,12 +1,15 @@
 {{ partial "head" . }}
-
 {{ partial "nav" . }}
 
 <main>
-  <div class="black-70 pl6">
-    <h1 class="f-headline fw6">Hi. I'm Dom.</h1>
-    <p class="f2 fw4 lh-copy">Here's a description</p>
-  </div>
+  <header class="cf">
+    <div class="ph3 pv4 pa5-m ph6-l">
+      <div class="black-70">
+        <p class="fw6 f-headline-l f-subheadline-m f1 measure">Hi. I'm Dom.</p>
+        <p class="f1-l f2-m f3 fw4 lh-copy measure">{{ .Site.Params.description }}</p>
+      </div>
+    </div>
+  </header>
 </main>
 
 {{ partial "footer" . }}
