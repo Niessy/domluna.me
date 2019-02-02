@@ -1,6 +1,7 @@
 ---
 title: Memory Networks
 date: "2015-12-21"
+spoiler: What was I supposed to write here again?
 ---
 
 Neural network approaches have traditionally lacked a memory component. By memory component I mean something akin to RAM in a computer. So, RNNs don't quite fit the picture as they provide a mechanism for learning long-term dependencies over time.

@@ -17,6 +17,24 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
+
+        <h3
+        style={{
+          fontFamily: 'Montserrat, sans-serif',
+          marginTop: rhythm(0.25),
+        }}>
+        <Link
+          style={{
+            boxShadow: 'none',
+            textDecoration: 'none',
+            color: 'rgba(0, 0, 0, 0.7)',
+          }}
+          to={"/"}
+        >
+          /
+        </Link>
+        </h3>
+
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
@@ -27,6 +45,7 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
+          {` - ${post.timeToRead} mins`}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -34,6 +53,24 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
+
+        <h3
+        style={{
+          fontFamily: 'Montserrat, sans-serif',
+          marginTop: rhythm(0.25),
+        }}>
+        <Link
+          style={{
+            boxShadow: 'none',
+            textDecoration: 'none',
+            color: 'rgba(0, 0, 0, 0.7)',
+          }}
+          to={"/"}
+        >
+          /
+        </Link>
+        </h3>
+
         <Bio />
 
         <ul
@@ -77,11 +114,14 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      html
+      timeToRead
       excerpt(pruneLength: 160)
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        spoiler
       }
     }
   }

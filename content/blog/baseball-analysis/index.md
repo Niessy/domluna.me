@@ -1,6 +1,7 @@
 ---
-title: Exploring Baseball with Python and D3.js
+title: Exploring Baseball
 date: "2015-01-19"
+spoiler: Yu Darvish, Justin Verlander and hit distributions!
 ---
 
 ## Python

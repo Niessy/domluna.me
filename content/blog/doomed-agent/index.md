@@ -1,6 +1,7 @@
 ---
 title: The Case of the Doomed Agent
 date: "2016-07-11"
+spoiler: Deep Reinforcement Learning on Doom simulations.
 ---
 
 > This project was done as the Capstone for the Udacity Machine Learning Nanodegree

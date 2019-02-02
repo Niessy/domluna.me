@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
 
+// require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -62,11 +64,6 @@ class Layout extends React.Component {
       >
         {header}
         {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
     )
   }

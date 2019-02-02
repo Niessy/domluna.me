@@ -1,6 +1,7 @@
 ---
-title: "Fun with FFI: Rust and Go"
+title: "FFI: Rust and Go"
 date: "2015-08-04"
+spoiler: An argument for the swift death of C/C++.
 ---
 
 > By FFI I'm typically talking about C FFI, that is we can call C through

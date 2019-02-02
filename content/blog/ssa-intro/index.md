@@ -1,6 +1,7 @@
 ---
 title: What's SSA?
 date: "2015-09-01"
+spoiler: Functional programming apparently.
 ---
 
 ### Variables

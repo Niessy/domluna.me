@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: ``,
     author: `Dominique Luna`,
-    description: `My personal website`,
+    description: `Dominique Luna's personal site.`,
     siteUrl: `https://www.domluna.me/`,
     social: {
       twitter: `lunaticd`,
@@ -31,6 +31,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              showCaptions: true,
             },
           },
           {

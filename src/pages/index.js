@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
+import Footer from '../components/Footer'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 
@@ -15,8 +16,8 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title="Meta"
+          keywords={[`blog`, `gatsby`, `machine learning`, `deep learning`, `julia`]}
         />
         <Bio />
         {posts.map(({ node }) => {
@@ -28,15 +29,19 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: `none`, color: 'rgba(0, 0, 0, 0.7)' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <small>
+                {node.frontmatter.date}
+                {` - ${node.timeToRead} mins`}
+              </small>
+              <p dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }} />
             </div>
           )
         })}
+      <Footer />
       </Layout>
     )
   }
@@ -58,9 +63,11 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            spoiler
           }
         }
       }
