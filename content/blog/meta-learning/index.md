@@ -1,6 +1,6 @@
 ---
 title: Meta-Learning with Julia & Flux
-date: "2019-01-14"
+date: "2019-02-02"
 spoiler: Learning to learn things fast!
 ---
 
