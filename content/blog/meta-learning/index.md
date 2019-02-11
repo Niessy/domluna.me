@@ -312,7 +312,7 @@ $$
 $$
 
 The first line shows the inner update, which optimizes $\theta$ towards a solution for the task training set
-$D_{t_i}^{train}$ producing $\phi_i$. The following line is the meta update which aims to generalize to new data. This involves evaluating all $phi_i$ on the test sets $D_{t_i}^{test}$ and accumulating the resulting gradients. $\alpha$ and $\beta$ are learning rates.
+$D_{t_i}^{train}$ producing $\phi_i$. The following line is the meta update which aims to generalize to new data. This involves evaluating all $\phi_i$ on the test sets $D_{t_i}^{test}$ and accumulating the resulting gradients. $\alpha$ and $\beta$ are learning rates.
 
 The difference between MAML and FOMAML (first-order MAML) is the inner gradient, shown is red is ignored during backpropagation:
 
@@ -387,7 +387,7 @@ end
 
 `Flux.Optimise.apply!` computes the gradient given the optimizer which is then applied to the weights, `w.data .-= ...`.
 
-`grad = Flux.Tracker.gradient(() -> Flux.mse(model(testx'), testy'), weights)` is the gradient from evaluating $phi_t$ on the test set.
+`grad = Flux.Tracker.gradient(() -> Flux.mse(model(testx'), testy'), weights)` is the gradient from evaluating $\phi_t$ on the test set.
 
 Next we accumulate the gradients and reset the weights:
 
@@ -437,7 +437,7 @@ is $\phi$ after $i$ gradient steps $\phi_{i}^{t}$.
 
 ![reptile gradient updates](./reptile_grad.png)
 
-This a Reptile update after training for 3 gradient steps on task data. Note with Reptile there's no train and test data, just data. The direction of the gradient update (blue arrow) is directly in the direction towards $phi_i$.  It's kind of crazy that this actually works. Section 5 of the [Reptile paper](https://arxiv.org/abs/1803.02999) has an analysis showing the gradients of MAML, FOMMAL and Reptile are similar within constants.
+This a Reptile update after training for 3 gradient steps on task data. Note with Reptile there's no train and test data, just data. The direction of the gradient update (blue arrow) is directly in the direction towards $\phi_i$.  It's kind of crazy that this actually works. Section 5 of the [Reptile paper](https://arxiv.org/abs/1803.02999) has an analysis showing the gradients of MAML, FOMMAL and Reptile are similar within constants.
 
 Here's the code for Reptile.
 
