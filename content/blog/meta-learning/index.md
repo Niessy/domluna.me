@@ -514,12 +514,12 @@ Lastly, let's see how quickly a representation is learned for a new task. We'll 
 
 ![Losses](./losses.png)
 
-Cool! Both FOMAML and Reptile learn a very useful representation within a few updates. Both the transfer and random models perform poorly, as we would probably expect.
+Cool! Both FOMAML and Reptile learn a very useful representation within a few updates. Both the transfer and random models perform poorly, as we would expect.
 
 ### Notes
 
 * The sine wave problem is susceptible to loss divergence (loss -> inf). The Xavier initialization, especially for the initial layer, `Linear(1, 64)` seems to be particularly important. I tinkered with optimizers a fair amount, I was suprised `ADAM` didn't perform well.
 * `Descent(0.02)` performs much better than `Descent(0.01)` as the inner optimizer. I hypothesize this is due to the small amount
 of updates in the inner loop thus it's particularly important to learn quickly. 
-* `relu` perform worse than `tanh` - the predicted sine wave isn't as smooth.
+* `relu` performs worse than `tanh` - the predicted sine wave isn't as smooth.
 * Learning the structure of a sine wave internally then scaling and shifting it during finetuning is super awesome.
