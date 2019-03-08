@@ -295,8 +295,8 @@ Why? Let's examine the sine wave dataset. The model is learning to map a number 
 
 ![1k Sines](1ksines.png) 
 
-That's 1000 sine waves. See the problem? For every x (input) value there's a line of possible y (output) values,
-thus the model will simply learn to predict 0 - the expected value. Meta-learning models will learn to do the same, the difference being the representation learned is optimized to 
+That's 1000 sine waves. See the problem? For every $x$ (input) value there's a line of possible $y$ (output) values,
+thus the model will simply learn to predict $0$ - the expected value. Meta-learning models will learn to do the same, the difference being the representation learned is optimized to 
 quickly learn a new task whereas the transfer learning representation does not. 
 
 ### MAML
@@ -504,13 +504,15 @@ p = plot_eval_data(data, "Reptile - SGD Optimizer")
 
 ### Testing Robustness
 
-To test if the FOMAML and Reptile representations *learned to learn quickly with minimal data* we'll finetune on 5 datapoints for 10 update steps. The x values are sampled from a uniform distribution of [0, 5], which is only the right half of the sine wave. Let's see if the entire wave can be learned quickly.
+To test if the FOMAML and Reptile representations *learned to learn quickly with minimal data* we'll 
+finetune on 5 datapoints for 10 update steps. The $x$ values are sampled from a uniform distribution 
+of $[0, 5]$, the right half of the sine wave. Can the entire wave be learned?
 
 ![FOMAML 5 samples 10 updates](./fomaml_5samples_10updates.png)
 
 ![Reptile 5 samples 10 updates](./reptile_5samples_10updates.png)
 
-Lastly, let's see how quickly a representation is learned for a new task. We'll use the same 5-element sample as before and train for 10 gradient updates.
+Lastly, let's see how quickly a representation is learned for a new task. We'll use the same 5 element sample as before and train for 10 gradient updates.
 
 ![Losses](./losses.png)
 
